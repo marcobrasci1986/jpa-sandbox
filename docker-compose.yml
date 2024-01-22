@@ -5,3 +5,7 @@ services:
     container_name: jpa-sandbox-db
     ports:
       - "5432:5432"
+    environment:
+      - POSTGRES_DB=jpa-sandbox
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
