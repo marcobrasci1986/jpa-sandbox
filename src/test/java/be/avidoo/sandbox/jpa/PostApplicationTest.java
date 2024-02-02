@@ -22,7 +22,7 @@ class PostApplicationTest {
 
 
     @Test
-    void name() {
+    void saveBidirectionalOneToMany() {
         Post post = new Post("First post");
 
         post.addComment(
@@ -35,10 +35,9 @@ class PostApplicationTest {
                 new PostComment("My third review")
         );
 
-        post.setId(1L);
-
         Post save = postRepository.save(post);
 
         assertThat(save.getId()).isNotNull();
     }
+
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @Table(name = "post")
 @Getter
-@Setter
 public class Post {
 
     @Id
@@ -29,12 +28,6 @@ public class Post {
 
     public Post(String title) {
         this.title = title;
-    }
-
-    public Post(Long id, String title, List<PostComment> comments) {
-        this.id = id;
-        this.title = title;
-        this.comments = comments;
     }
 
     public void addComment(PostComment comment) {
