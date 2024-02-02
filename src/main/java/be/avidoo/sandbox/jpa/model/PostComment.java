@@ -5,19 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "post_comment", schema = "sandbox")
+@Table(name = "post_comment")
 @Getter
 @Setter
 public class PostComment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_comment_seq_generator")
+    @SequenceGenerator(name = "post_comment_seq_generator", sequenceName = "post_comment_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "review")
     private String review;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "post_id")
     private Post post;
 
     public PostComment() {

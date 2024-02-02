@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "post", schema = "sandbox")
+@Table(name = "post")
 @Getter
 @Setter
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "post_seq_generator")
+    @SequenceGenerator(name = "post_seq_generator", sequenceName = "post_seq", allocationSize = 1)
     private Long id;
 
     @Column(name = "title")
