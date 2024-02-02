@@ -7,7 +7,6 @@ import lombok.Setter;
 @Entity
 @Table(name = "post_comment")
 @Getter
-@Setter
 public class PostComment {
 
     @Id
