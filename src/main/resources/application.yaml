@@ -1,0 +1,10 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/jpa-sandbox
+#    username: admin
+#    password: admin
+#    driver-class-name: org.postgresql.Driver
+#
+#  flyway:
+#    default-schema: sandbox
+#
